@@ -11,7 +11,9 @@ import { dirname } from "path";
 
 // Routes
 import authRoutes from "./routes/user.route.js";
-import productRoutes from "./routes/product.routes.js"
+import productRoutes from "./routes/product.route.js"
+import cartRoutes from './routes/cart.route.js';
+import orderRoutes from './routes/order.route.js';
 
 
 const app = express();
@@ -29,6 +31,8 @@ app.use("/uploads", express.static(path.join(__dirname, "public/products/uploads
 //  Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/product", productRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/order', orderRoutes);
 
 
 
